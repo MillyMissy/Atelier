@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Atelier des auteurs</title>
+  <meta name="theme-color" content="#14213D">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <style>
+    :root {
+      --encre: #14213D;
+      --papier: #FAFAF7;
+      --accent: #2E86AB;
+      --texte: #14213D;
+      --fond: #FAFAF7;
+      --discret: #5A6478;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --texte: #F1F1EC;
+        --fond: #0F1830;
+        --discret: #9AA5BC;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: var(--fond);
+      color: var(--texte);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+               env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    }
+    main { max-width: 34rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+    p { margin: 0 0 1.5rem; color: var(--discret); }
+    ul { list-style: none; padding: 0; margin: 0 0 2rem; }
+    li { padding: 0.75rem 0; border-top: 1px solid var(--discret); display: flex; justify-content: space-between; gap: 1rem; }
+    li:last-child { border-bottom: 1px solid var(--discret); }
+    button {
+      font: inherit;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border: 0;
+      border-radius: 0.5rem;
+      padding: 0.9rem 1.25rem;
+      min-height: 3rem;
+      width: 100%;
+    }
+    button:focus-visible { outline: 3px solid var(--texte); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Atelier des auteurs</h1>
+    <p>Point de départ de l'application : cette page vérifie que l'installation et le mode hors ligne fonctionnent.</p>
+
+    <ul>
+      <li><span>Réseau</span> <strong id="reseau">…</strong></li>
+      <li><span>Mode hors ligne</span> <strong id="hors-ligne">…</strong></li>
+      <li><span>Mode installé</span> <strong id="installe">…</strong></li>
+      <li><span>Version</span> <strong>0.1</strong></li>
+    </ul>
+
+    <button id="installer" hidden>Installer l'application</button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
